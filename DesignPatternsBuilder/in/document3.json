@@ -1,0 +1,40 @@
+[
+  { "h1": "Nagłówek stopnia 1" },
+  { "p": "Fragment tekstu." },
+  { "p": "Przykładowy kolejny fragment tekstu." },
+  { "h2": "Nagłówek stopnia 2" },
+  { "p": "Poniżej znajduje się przykładowa lista:" },
+  {
+    "ul": [
+      { "li": "pierwszy element listy" },
+      { "li": "drugi element listy" },
+      { "li": "trzeci element listy" }
+    ]
+  },
+  { "h3": "Nagłówek stopnia 3" },
+  { "p": "Poniżej znajduje się kolejna, zagnieżdżona lista:" },
+  {
+    "ul": [
+      { "li": "element A listy" },
+      {
+        "li": {
+          "": "element B listy",
+          "ul": [
+            { "li": "składnik B1" },
+            { "li": "składnik B2" },
+            { "li": "składnik B3" }
+          ]
+        }
+      },
+      { "li": "element C listy" }
+    ]
+  },
+  {
+    "p": [
+      { "": "Jakiś dłuższy fragment tekstu z" },
+      { "strong": "zastosowaniem kroju pisma pogrubionego" },
+      { "": "oraz" },
+      { "em": "kursywy." }
+    ]
+  }
+]

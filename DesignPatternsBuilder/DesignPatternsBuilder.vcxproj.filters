@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="doconvert.cpp" />
+    <ClCompile Include="jute.cpp" />
+    <ClCompile Include="JSONValue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jute.h" />
+    <ClInclude Include="ArgumentsParser.h" />
+    <ClInclude Include="HtmlElement.h" />
+    <ClInclude Include="vs_stream.h" />
+    <ClInclude Include="JSONValue.h" />
+  </ItemGroup>
+</Project>

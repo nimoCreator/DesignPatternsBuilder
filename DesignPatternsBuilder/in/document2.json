@@ -1,0 +1,20 @@
+[
+  { "h3": "Przykład listy:" },
+  { "p": "Poniżej znajduje się zagnieżdżona lista:" },
+  {
+    "ul": [
+      { "li": "element A listy" },
+      {
+        "li": {
+          "": "element B listy",
+          "ul": [
+            { "li": "składnik B1" },
+            { "li": "składnik B2" },
+            { "li": "składnik B3" }
+          ]
+        }
+      },
+      { "li": "element C listy" }
+    ]
+  }
+]
