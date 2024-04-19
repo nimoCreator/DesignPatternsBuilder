@@ -9,6 +9,10 @@ void JSONValue::ConstructHTMLDocument(const std::unique_ptr<HtmlElement>& html) 
     Build(body, *this);
 }
 
+void JSONValue::ConstructMarkdownDocument(const std::unique_ptr<MarkdownElement>& markdown) {
+    Build(markdown, *this);
+}
+
 void JSONValue::Build(HtmlElement* root, jute::jValue& v) {
     jute::jType type = v.get_type();
     if (type == jute::JSTRING) {
@@ -23,6 +27,14 @@ void JSONValue::Build(HtmlElement* root, jute::jValue& v) {
         }
     }
     if (type == jute::JARRAY) {
+        for (size_t i = 0; i < v.get_arr().size(); i++) {
+            Build(root, v.get_arr()[i]);
+        }
+        return;
+    }
+}
+
+void JSONValue::Build(MarkdownElement* root, jute::jValue& v) {{
         for (size_t i = 0; i < v.get_arr().size(); i++) {
             Build(root, v.get_arr()[i]);
         }

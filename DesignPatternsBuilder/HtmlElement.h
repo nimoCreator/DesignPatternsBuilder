@@ -7,9 +7,11 @@
 #include <sstream>
 #include <memory>
 
+#include "Builder.h"
+
 using namespace std;
 
-struct HtmlElement
+struct HtmlElement : public Builder
 {
     const size_t indent_size = 2;
 

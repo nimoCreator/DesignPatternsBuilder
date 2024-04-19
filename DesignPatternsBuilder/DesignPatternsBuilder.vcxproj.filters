@@ -2,14 +2,42 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="doconvert.cpp" />
-    <ClCompile Include="jute.cpp" />
-    <ClCompile Include="JSONValue.cpp" />
+    <ClCompile Include="JSONValue.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="jute.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jute.h" />
-    <ClInclude Include="ArgumentsParser.h" />
-    <ClInclude Include="HtmlElement.h" />
-    <ClInclude Include="vs_stream.h" />
-    <ClInclude Include="JSONValue.h" />
+    <ClInclude Include="HtmlElement.h">
+      <Filter>classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Builder.h">
+      <Filter>classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ArgumentsParser.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONValue.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="jute.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="vs_stream.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="MarkdownElement.h">
+      <Filter>classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="classes">
+      <UniqueIdentifier>{af742ac9-8efe-4353-91ab-a10919e68a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="other">
+      <UniqueIdentifier>{191b4ad9-d82e-4eab-88a3-f87a12934369}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

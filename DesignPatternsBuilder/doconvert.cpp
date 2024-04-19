@@ -7,7 +7,11 @@
 #include <algorithm>
 
 #include "ArgumentsParser.h"
+
 #include "HtmlElement.h"
+#include "MarkdownElement.h"
+#include "Builder.h"
+
 #include "JSONValue.h"
 
 #include "vs_stream.h"
@@ -34,31 +38,32 @@ int main(int argc, char* argv[])
         ifstream in(input_file);
         if (in.good())
         {
-            string str((std::istreambuf_iterator<char>(in)),
-                (std::istreambuf_iterator<char>()));
+            string str((std::istreambuf_iterator<char>(in)), (std::istreambuf_iterator<char>()));
             in.close();
 
-            std::unique_ptr<HtmlElement> document;
+            std::unique_ptr<Builder> builder;
 
-            if (output_format == "h") // html
+            if (output_format == "m") // markdown
             {
-                document = std::unique_ptr<HtmlElement>{ new HtmlElement("html", "") };
+                builder = std::unique_ptr<MarkdownElement>{};
             }
-            // . . .
-            else // html default
+            else // if (output_format == "h") html default
             {
-                document = std::unique_ptr<HtmlElement>{ new HtmlElement("html", "") };
+                builder = std::unique_ptr<HtmlElement>{};
             }
+            // ... inne formaty
 
             JSONValue jsonParser(str);
-            jsonParser.ConstructHTMLDocument(document);
+            jsonParser.ConstructDocument(builder);
+
+            auto document = builder->getResult();
 
             // add header
             std::stringstream ss;
             // add header
             ss << "<!DOCTYPE html>\n";
             // add body
-            ss << document->str();
+            ss << document->generate();;
             // add footer
             ss << "<!-- HTML document created using IOConverter -->";
 
